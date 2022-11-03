@@ -1,0 +1,125 @@
+$borderimg: 5px;
+$color: rgb(163, 159, 159);
+@use "medidas";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav {
+    width: 100%;
+    height: 10%;
+    //background: violet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .nav__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 70%;
+        width: 15em;
+        border-radius: $borderimg;
+
+        .nav__img {
+            height: 10em;
+            width: 10em;
+            border-radius: $borderimg;
+        }
+
+        .nav__text--gray {
+            color: $color;
+            font-size:15px;
+        }
+    }
+
+    .nav__data {
+        height: 25%;
+        width: 15em;
+        display: flex;
+        flex-direction: row;
+
+
+        .nav__datatext {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            width: 7em;
+            height: 3.5em;
+            margin: 10px;
+            padding: 10px;
+            border-radius: $borderimg;
+            background: rgb(237, 233, 233);
+            position: relative;
+            left: -1.5em;
+            
+            .nav__datatext--gray {
+                width: 5em;
+                height: 2em;
+                color: $color;
+                position: relative;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+}
+
+/*galeria de imagenes*/
+
+.gallery__container {
+    display: grid;
+    grid-template-areas:
+        "img1 img2 img2"
+        "img3 img3 img4"
+        "img5 img6 img4";
+        margin-left: 4em;
+    grid-template-columns: repeat(3, 31%);
+    gap: 30px;
+}
+
+.gallery__item--tamaño1 {
+    
+    grid-area: img1;
+
+    @include medidas.medidas
+}
+
+.gallery__item--tamaño2 {
+    grid-area: img2;
+    @include medidas.medidas
+}
+
+.gallery__item--tamaño3 {
+    grid-area: img3;
+    @include medidas.medidas
+}
+
+.gallery__item--tamaño4 {
+    grid-area: img4;
+    
+    @include medidas.medidas
+}
+
+.gallery__item--tamaño5 {
+    grid-area: img5;
+    
+    @include medidas.medidas
+}
+
+.gallery__item--tamaño6 {
+    grid-area: img6;
+    
+    @include medidas.medidas
+}
+footer{
+    display: flex;
+    margin: 5em;
+    justify-content: center;
+}
